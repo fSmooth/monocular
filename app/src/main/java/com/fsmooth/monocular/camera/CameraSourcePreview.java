@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.fsmooth.monocular.Manifest;
 import com.google.android.gms.common.images.Size;
-import com.google.android.gms.vision.CameraSource;
 
 import java.io.IOException;
 
@@ -69,6 +68,8 @@ public class CameraSourcePreview extends ViewGroup{
             mStartRequested = false;
         }
     }
+
+
 
     private class SurfaceCallback implements SurfaceHolder.Callback {
         @Override

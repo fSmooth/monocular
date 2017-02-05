@@ -33,9 +33,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by fonsi on 5/02/17.
- */
 
 public class CameraSource {
     @SuppressLint("InlinedApi")
