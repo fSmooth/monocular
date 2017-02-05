@@ -33,22 +33,22 @@ import com.fsmooth.monocular.camera.CameraSourcePreview;
 import java.io.IOException;
 
 public class BarcodeCaptureActivity extends AppCompatActivity implements BarcodeTracker.BarcodeGraphicTrackerCallback {
-    private static final String TAG = "Barcode-reader";
+    private static final String TAG = "Monocular";
 
-    // Intent request code to handle updating play services if needed.
+    // Código para actualziar servicios
     private static final int RC_HANDLE_GMS = 9001;
 
-    // Permission request codes need to be < 256
+    // Código de permiso de cámara
     private static final int RC_HANDLE_CAMERA_PERM = 2;
 
-    // Constants used to pass extra data in the intent
+    // Constante usada para pasar datos extra el intent
     public static final String BarcodeObject = "Barcode";
 
     private CameraSource mCameraSource;
     private CameraSourcePreview mPreview;
 
     /**
-     * Initializes the UI and creates the detector pipeline.
+     * Inicializa la interfaz y crea el detector.
      */
     @Override
     public void onCreate(Bundle icicle) {
@@ -60,8 +60,8 @@ public class BarcodeCaptureActivity extends AppCompatActivity implements Barcode
         boolean autoFocus = true;
         boolean useFlash = false;
 
-        // Check for the camera permission before accessing the camera.  If the
-        // permission is not granted yet, request permission.
+        // Comprueba los permisos antes de iniciar la cámara,
+        // si no los tiene los solicita.
         int rc = ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
         if (rc == PackageManager.PERMISSION_GRANTED) {
             createCameraSource(autoFocus, useFlash);
@@ -70,6 +70,7 @@ public class BarcodeCaptureActivity extends AppCompatActivity implements Barcode
         }
     }
 
+    // Detector de códigos QR.
     @Override
     public void onDetectedQrCode(Barcode barcode) {
         if (barcode != null) {
@@ -80,7 +81,7 @@ public class BarcodeCaptureActivity extends AppCompatActivity implements Barcode
         }
     }
 
-    // Handles the requesting of the camera permission.
+    // Manejador de los permisos de la cámara.
     private void requestCameraPermission() {
         Log.w(TAG, "Camera permission is not granted. Requesting permission");
 
@@ -93,10 +94,7 @@ public class BarcodeCaptureActivity extends AppCompatActivity implements Barcode
     }
 
     /**
-     * Creates and starts the camera.
-     * <p>
-     * Suppressing InlinedApi since there is a check that the minimum version is met before using
-     * the constant.
+     * Crea e inicia la cámara.
      */
     @SuppressLint("InlinedApi")
     private void createCameraSource(boolean autoFocus, boolean useFlash) {
@@ -158,14 +156,14 @@ public class BarcodeCaptureActivity extends AppCompatActivity implements Barcode
                 .build();
     }
 
-    // Restarts the camera
+    // Reinicia la cámara
     @Override
     protected void onResume() {
         super.onResume();
         startCameraSource();
     }
 
-    // Stops the camera
+    // Para la cámara
     @Override
     protected void onPause() {
         super.onPause();
@@ -175,8 +173,7 @@ public class BarcodeCaptureActivity extends AppCompatActivity implements Barcode
     }
 
     /**
-     * Releases the resources associated with the camera source, the associated detectors, and the
-     * rest of the processing pipeline.
+     * Libera los recursos de la cámara.
      */
     @Override
     protected void onDestroy() {

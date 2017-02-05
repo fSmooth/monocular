@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_error_format" translatable="false">\"Error leyendo el código: %1$s\"</string>
+    <string name="low_storage_error">No se pueden descargar las dependencias del detector debido a la falta de memoria</string>
+    <string name="no_barcode_captured">Ningún código capturado.</string>
+    <string name="no_camera_permission">Se necesitan permisos</string>
+    <string name="permission_camera_rationale">El acceso a la cámara es necesario para la detención de códigos</string>
+</resources>
