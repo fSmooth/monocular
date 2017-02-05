@@ -5,4 +5,5 @@
     <string name="no_barcode_captured">Ningún código capturado.</string>
     <string name="no_camera_permission">Se necesitan permisos</string>
     <string name="permission_camera_rationale">El acceso a la cámara es necesario para la detención de códigos</string>
+    <string name="scan_barcode_button">Detectar código</string>
 </resources>
