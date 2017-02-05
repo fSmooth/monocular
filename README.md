@@ -4,4 +4,4 @@
 
 
 
-The icon was designed by [Freepik](app/src/main/ic_launcher-web.png ) from Flaticon.
+The icon was designed by [Freepik](http://www.freepik.com) from Flaticon.
